@@ -10,11 +10,11 @@ public class Oppgave_2 {
 
 	public static void main(String[] args) {
 		List<Ansatt> ansatte = List.of(
-			new Ansatt("Bjarne", "Son", Kjonn.Mann, "Fiberlegger", 3),
-			new Ansatt("Bjarne", "Son", Kjonn.Mann, "Fiberlegger", 3),
-			new Ansatt("Bjarne", "Son", Kjonn.Mann, "Fiberlegger", 3),
-			new Ansatt("Bjarne", "Son", Kjonn.Mann, "Fiberlegger", 3),
-			new Ansatt("Bjarne", "Son", Kjonn.Mann, "Fiberlegger", 3)
+				new Ansatt("Bjarne", "Son", Kjonn.MANN, "Fiberlegger", 100_000),
+				new Ansatt("Scum", "Masterson", Kjonn.MANN, "Scrum master", 100_000),
+				new Ansatt("Dronning", "Sonja", Kjonn.KVINNE, "Sjef", 1_000_000),
+				new Ansatt("Aurora", "Aksnes", Kjonn.KVINNE, "Synger", 400_000),
+				new Ansatt("Olaug", "Bollestad", Kjonn.KVINNE, "Kristen", 666_666)
 		);
 		lonnsoppgjor(ansatte, a -> a.aarslonn += 1);
 		skrivUt(ansatte);

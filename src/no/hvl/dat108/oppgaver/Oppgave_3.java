@@ -13,10 +13,11 @@ public class Oppgave_3 {
 		List<Ansatt> ansatte = List.of(
 			new Ansatt("Bjarne", "Son", Kjonn.MANN, "Fiberlegger", 100_000),
 			new Ansatt("Scum", "Masterson", Kjonn.MANN, "Scrum master", 100_000),
-			new Ansatt("Kong", "Harald", Kjonn.KVINNE, "Sjef", 1_000_000),
-			new Ansatt("Bjarne", "Son", Kjonn.KVINNE, "Fiberlegger", 400_000),
+			new Ansatt("Dronning", "Sonja", Kjonn.KVINNE, "Sjef", 1_000_000),
+			new Ansatt("Aurora", "Aksnes", Kjonn.KVINNE, "Synger", 400_000),
 			new Ansatt("Olaug", "Bollestad", Kjonn.KVINNE, "Kristen", 666_666)
 		);
+		
 		// a)
 		List<String> etternavn = ansatte.stream().map(t -> t.etternavn).toList();
 		System.out.println("a) Etternavn: " + etternavn);
@@ -65,5 +66,4 @@ public class Oppgave_3 {
 		int sum = tall.stream().filter(deleligMed3.or(deleligMed5)).reduce(0, Integer::sum);
 		System.out.println("h) Sum av tall mellom 1-1000 delelig på 3 eller 5: " + sum);
 	}
-	
 }
