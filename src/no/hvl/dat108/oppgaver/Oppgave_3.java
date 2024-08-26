@@ -1,6 +1,5 @@
 package no.hvl.dat108.oppgaver;
 
-import java.lang.foreign.Linker.Option;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
@@ -12,9 +11,9 @@ public class Oppgave_3 {
 
 	public static void main(String[] args) {
 		List<Ansatt> ansatte = List.of(
-			new Ansatt("Bjarne", "Son", Kjonn.Mann, "Fiberlegger", 1_000),
-			new Ansatt("Bjarne", "Son", Kjonn.Mann, "Junior utvikler", 100_000),
-			new Ansatt("Bjarne", "Son", Kjonn.KVINNE, "Sjef", 1_000_000),
+			new Ansatt("Bjarne", "Son", Kjonn.MANN, "Fiberlegger", 100_000),
+			new Ansatt("Scum", "Masterson", Kjonn.MANN, "Scrum master", 100_000),
+			new Ansatt("Kong", "Harald", Kjonn.KVINNE, "Sjef", 1_000_000),
 			new Ansatt("Bjarne", "Son", Kjonn.KVINNE, "Fiberlegger", 400_000),
 			new Ansatt("Olaug", "Bollestad", Kjonn.KVINNE, "Kristen", 666_666)
 		);
@@ -51,7 +50,8 @@ public class Oppgave_3 {
 		// g)
 		System.out.println("g) Ansatte med lavest lønn: ");
 		Ansatt minstLonnet = ansatte.stream().min((o1, o2) -> Integer.compare(o1.aarslonn, o2.aarslonn)).orElse(null);
-		System.out.println(minstLonnet != null ? minstLonnet.toString() : "Ingen ansatt");
+		List<Ansatt> minstLønnede = ansatte.stream().filter(t -> t.aarslonn == minstLonnet.aarslonn).toList();
+		System.out.println(minstLønnede);
 		
 		// h)
 		List<Integer> tall = new ArrayList<Integer>();
