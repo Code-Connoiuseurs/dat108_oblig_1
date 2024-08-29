@@ -15,6 +15,30 @@ public class Ansatt {
 		this.aarslonn = aarslonn;
 	}
 
+	public String getFornavn() {
+		return fornavn;
+	}
+
+	public void setFornavn(String fornavn) {
+		this.fornavn = fornavn;
+	}
+
+	public String getEtternavn() {
+		return etternavn;
+	}
+
+	public void setEtternavn(String etternavn) {
+		this.etternavn = etternavn;
+	}
+
+	public String getStilling() {
+		return stilling;
+	}
+
+	public void setStilling(String stilling) {
+		this.stilling = stilling;
+	}
+
 	public Kjonn getKjonn() {
 		return kjonn;
 	}
