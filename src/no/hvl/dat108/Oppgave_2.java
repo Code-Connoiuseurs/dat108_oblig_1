@@ -6,23 +6,24 @@ import java.util.function.Function;
 import no.hvl.dat108.Ansatt.Kjonn;
 
 public class Oppgave_2 {
-
 	public static void main(String[] args) {
 		
 		List<Ansatt> ansattListe = List.of(
 				new Ansatt("Abel","Gabel", Kjonn.MANN, "Iskrem man", 50000),
 				new Ansatt("Snubble","Dubble", Kjonn.MANN, "trappe tester", 20000),
 				new Ansatt("Grace","Queen", Kjonn.KVINNE, "sjef", 100000),
-				new Ansatt("Gobble","Gobble", Kjonn.MANN, "smaks tester", 40000)
+				new Ansatt("Gobble","Gobble", Kjonn.MANN, "smaks tester", 40000),
+				new Ansatt("Elizabeth","Olsen", Kjonn.KVINNE, "kjendis", 140703)
 				);
 				
-	Function<Ansatt, Integer> tillegg = ansatt -> ansatt.getAarslonn() + 2000;
+		
+	Function<Ansatt, Integer> tillegg = ansatt -> ansatt.getAarsLonn() + 2000;
 	
-	Function<Ansatt, Integer> prosentTillegg = ansatt -> (int) (ansatt.getAarslonn() * 1.05);
+	Function<Ansatt, Integer> prosentTillegg = ansatt -> (int) (ansatt.getAarsLonn() * 1.05);
 	
-	Function<Ansatt, Integer> lavLonnTillegg = ansatt -> ansatt.getAarslonn() + (ansatt.getAarslonn() < 30000 ? 6500 : 0);
+	Function<Ansatt, Integer> lavLonnTillegg = ansatt -> ansatt.getAarsLonn() + (ansatt.getAarsLonn() < 30000 ? 6500 : 0);
 	
-	Function<Ansatt, Integer> prosetTilleggMann = ansatt -> (int) (ansatt.getAarslonn() * 1.1);
+	Function<Ansatt, Integer> prosetTilleggMann = ansatt -> (int) (ansatt.getAarsLonn() * 1.1);
 	
 	lonnsoppgjor(ansattListe, tillegg);
 		System.out.println("etter tillegg");
@@ -47,16 +48,15 @@ public class Oppgave_2 {
 	skrivUtAlle(ansattListe);
 	}
 	
-	private static void lonnsoppgjor(List<Ansatt> ansatte, Function<Ansatt, Integer> beregnNyLonn) {
+	public static void lonnsoppgjor(List<Ansatt> ansatte, Function<Ansatt, Integer> beregnNyLonn) {
 		for(Ansatt ansatt : ansatte) {
 			int nyLonn = beregnNyLonn.apply(ansatt);
-			ansatt.setAarslonn(nyLonn);
+			ansatt.setAarsLonn(nyLonn);
 		}
 	}
-	private static void skrivUtAlle(List<Ansatt> ansatte) {
+	public static void skrivUtAlle(List<Ansatt> ansatte) {
 		for(Ansatt ansatt : ansatte) {
 			System.out.println(ansatt);
 		}
 	}
 }
-

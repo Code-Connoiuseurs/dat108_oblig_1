@@ -1,24 +1,26 @@
 package no.hvl.dat108;
 
+import oppgave2.Ansatt.Kjonn;
+
 public class Ansatt {
 
 	public enum Kjonn {
 		MANN, KVINNE
 	}
 	
-	private String fornavn;
-	private String etternavn;
-	private Kjonn kjonn;
-	private String stilling;
-	private int aarslonn;
+	public String fornavn;
+	public String etternavn;
+	public Kjonn kjonn;
+	public String stilling;
+	public int aarsLonn;
 	
-	public Ansatt(String fornavn, String etternavn, Kjonn kjonn, String stilling, int aarslonn) {
+	public Ansatt(String fornavn, String etternavn, Kjonn kjonn, String stilling, int aarsLonn) {
 		super();
 		this.fornavn = fornavn;
 		this.etternavn = etternavn;
 		this.kjonn = kjonn;
 		this.stilling = stilling;
-		this.aarslonn = aarslonn;
+		this.aarsLonn = aarsLonn;
 	}
 
 	public String getFornavn() {
@@ -53,17 +55,17 @@ public class Ansatt {
 		this.stilling = stilling;
 	}
 	
-	public int getAarslonn() {
-		return aarslonn;
+	public int getAarsLonn() {
+		return aarsLonn;
 	}
 	
-	public void setAarslonn(int aarslonn) {
-		this.aarslonn = aarslonn;
+	public void setAarsLonn(int aarslonn) {
+		this.aarsLonn = aarslonn;
 	}
 
 	@Override
 	public String toString() {
 		return "Ansatt [fornavn = " + fornavn + ", etternavn = " + etternavn + ", kjonn = " + kjonn + ", stilling = " + stilling
-				+ ", aarslonn = " + aarslonn + "]";
+				+ ", aarslonn = " + aarsLonn + "]";
 	}
 }
